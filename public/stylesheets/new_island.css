@@ -1,0 +1,71 @@
+body{
+
+  background-image: url('new_island.png');
+  background-color: #fff;
+  background-repeat:no-repeat;
+  background-position:top;
+  padding: 0px;
+  margin:0px;
+}
+
+.main {
+  width: 800px;
+  margin: auto;
+}
+
+section{
+  float: top;
+  border-style: ridge;
+  border-width: 3px;
+  border-top-width: 0px;
+  margin:0px;
+  padding: 10px;
+  background-color:#e0f1f1;
+  width: 800px;
+}
+
+nav {
+  float: top;
+  margin-left: auto;
+  margin-right:auto;
+  margin-bottom: 0px;
+  width:99.1%;
+  padding: 5px;
+  background-color: #405060;
+  white-space: nowrap;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+
+}
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+nav ul li a {
+  font-weight: bold;
+    text-decoration: none;
+}
+nav ul li a:visited {
+  color: #79CDCD;
+}
+nav ul li a:hover {
+	color: #069;
+  text-decoration: underline;
+}
+
+.round {
+  -moz-border-radius-right: 15px;
+  -webkit-border-radius-right:15px;
+  border-radius:15px;
+}
+
+.round2 {
+  border-top-left-radius: 0px 0px;
+  border-top-right-radius: 0px 0px;
+  border-bottom-right-radius: 15px 15px;
+  border-bottom-left-radius: 15px 15px;
+  
+}
