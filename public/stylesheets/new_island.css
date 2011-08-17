@@ -37,16 +37,16 @@ nav {
 
 nav ul {
   margin: 0;
-  padding: 0;
-
 }
 nav ul li {
   list-style-type: none;
   display: inline-block;
+    padding: 0.2em 0;
 }
 nav ul li a {
+  padding: 0 5px;
   font-weight: bold;
-    text-decoration: none;
+  text-decoration: none;
 }
 nav ul li a:visited {
   color: #79CDCD;
