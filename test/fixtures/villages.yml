@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  user_id: 1
+  woodhouse_id: 1
+  pit_id: 1
+  mine_id: 1
+  farm_id: 1
+  wood: 1
+  stone: 1
+  iron: 1
+  population: 1
+  population_limit: 1
+  wood_limit: 1
+  stone_limit: 1
+  iron_limit: 1
+
+two:
+  name: MyString
+  user_id: 1
+  woodhouse_id: 1
+  pit_id: 1
+  mine_id: 1
+  farm_id: 1
+  wood: 1
+  stone: 1
+  iron: 1
+  population: 1
+  population_limit: 1
+  wood_limit: 1
+  stone_limit: 1
+  iron_limit: 1

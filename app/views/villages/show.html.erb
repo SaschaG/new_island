@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<div class = "navigation">
+  <table>
+    <tr>
+	  <td><b> <%= @village.name %></b> (<%= link_to @user.name , user_path(@user) %>) ||</td><td></td>
+	  <td>Wood: <%= @village.wood %></td><td>Stone: <%= @village.stone %> </td><td>
+	  Iron: <%= @village.iron %> </td><td>Population: <%= @village.population %></td>
+	</tr>
+  </table>
+</div>
+
+  <b>Woodhouse:</b>
+  <%= @village.woodhouse_id %><br/>
+  
+  <b>Pit:</b>
+  <%= @village.pit_id %><br/>
+
+  <b>Mine:</b>
+  <%= @village.mine_id %><br/>
+
+  <b>Farm:</b>
+  <%= @village.farm_id %><br/>
+
+<p>
+
+</p>
+
+<p>
+
+</p>
+
+<p>
+
+</p>
+
+<p>
+
+</p>
+
+
+
+<%= link_to 'Edit', edit_village_path(@village) %> |
+<%= link_to 'Back', villages_path %>

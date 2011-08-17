@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110816233951) do
+ActiveRecord::Schema.define(:version => 20110817004535) do
 
   create_table "slugs", :force => true do |t|
     t.string   "name"
@@ -36,11 +36,31 @@ ActiveRecord::Schema.define(:version => 20110816233951) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name"
+    t.string   "discription"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "villages", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "hq_id"
+    t.integer  "woodhouse_id"
+    t.integer  "pit_id"
+    t.integer  "mine_id"
+    t.integer  "farm_id"
+    t.integer  "depot_id"
+    t.integer  "wood"
+    t.integer  "stone"
+    t.integer  "iron"
+    t.integer  "population"
+    t.integer  "x"
+    t.integer  "y"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

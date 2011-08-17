@@ -1,2 +1,33 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<table class="home">
+  <tr>
+	<td class="main">
+      
+      <h1>Browsergame Test</h1>
+	</td>
+  </tr>
+  <tr>
+  <td>
+  </td>
+  <td class="sidebar round">   
+    <h3>Log in</h3>
+  	  <% if signed_in? %>
+	    Hey! <br/>
+	  	Du bist bereits eingeloggt<br />
+	  	<%= link_to "Link zu deinem Profil", current_user %>
+	  	<% else %>
+	    <%= form_for("user", :url => user_session_path) do |f| %>
+		Email:
+  		<%= f.text_field :email %>
+  		Passwort:
+  		<%= f.password_field :password %>
+  		<%= f.check_box :remember_me %> dauerhaft einloggen
+  		<%= f.submit 'Einloggen' %> <br/><br/>
+  		<%= link_to "Passwort vergessen?", new_password_path('user') %>
+	  <% end %>
+	<% end %>
+    </td>
+  </tr>
+</table>
+
+
+

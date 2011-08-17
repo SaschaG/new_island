@@ -16,6 +16,9 @@
 
   <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></p>
+  
+    <p><%= f.label :discription %><br />
+  <%= f.text_area :discription , :size => '60x20', :maxlength => '2000'%></p>
 
   <p><%= f.submit "Update" %></p>
 <% end %>
