@@ -15,6 +15,8 @@ class VillagesController < ApplicationController
   def show
     @village = Village.find(params[:id])
     @user = User.find(@village.user_id)
+    @village.update_population
+    @village.save
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @village }
@@ -97,5 +99,57 @@ class VillagesController < ApplicationController
       format.html { redirect_to(villages_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def upgrade_hq
+    @village = Village.find(params[:id])
+    if @village.wood >= Hq.find(@village.hq_id).woodcost && @village.stone >= Hq.find(@village.hq_id).stonecost && @village.iron >= Hq.find(@village.hq_id).ironcost
+    @village.upgrade_hq
+    flash[:notice] = "Upgrading"
+    redirect_to village_url(@village)
+    else
+    flash[:notice] = "Nicht genügend Rohstoffe!"
+    redirect_to village_url(@village)
+    end
+  end
+  
+  def upgrade_depot
+    @village = Village.find(params[:id])
+    if @village.wood >= Depot.find(@village.depot_id).woodcost && @village.stone >= Depot.find(@village.depot_id).stonecost && @village.iron >= Depot.find(@village.depot_id).ironcost
+    @village.upgrade_depot
+    flash[:notice] = "Upgrading"
+    redirect_to village_url(@village)
+    else
+    flash[:notice] = "Nicht genügend Rohstoffe!"
+    redirect_to village_url(@village)
+    end
+  end
+  
+  def upgrade_woodhouse
+    @village = Village.find(params[:id])
+    @village.upgrade_woodhouse
+    flash[:notice] = "Upgrading"
+    redirect_to village_url(@village)
+  end
+  
+  def upgrade_pit
+    @village = Village.find(params[:id])
+    @village.upgrade_pit
+    flash[:notice] = "Upgrading"
+    redirect_to village_url(@village)
+  end
+  
+  def upgrade_mine
+    @village = Village.find(params[:id])
+    @village.upgrade_mine
+    flash[:notice] = "Upgrading"
+    redirect_to village_url(@village)
+  end
+  
+  def upgrade_farm
+    @village = Village.find(params[:id])
+    @village.upgrade_farm
+    flash[:notice] = "Upgrading"
+    redirect_to village_url(@village)
   end
 end

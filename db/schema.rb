@@ -10,7 +10,66 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110817004535) do
+ActiveRecord::Schema.define(:version => 20110817125738) do
+
+  create_table "depots", :force => true do |t|
+    t.integer  "limit"
+    t.integer  "points"
+    t.integer  "worker"
+    t.integer  "buildtime"
+    t.integer  "woodcost"
+    t.integer  "stonecost"
+    t.integer  "ironcost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "farms", :force => true do |t|
+    t.integer  "limit"
+    t.integer  "points"
+    t.integer  "buildtime"
+    t.integer  "woodcost"
+    t.integer  "stonecost"
+    t.integer  "ironcost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hqs", :force => true do |t|
+    t.integer  "rate"
+    t.integer  "points"
+    t.integer  "worker"
+    t.integer  "buildtime"
+    t.integer  "woodcost"
+    t.integer  "stonecost"
+    t.integer  "ironcost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mines", :force => true do |t|
+    t.integer  "rate"
+    t.integer  "points"
+    t.integer  "worker"
+    t.integer  "buildtime"
+    t.integer  "woodcost"
+    t.integer  "stonecost"
+    t.integer  "ironcost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pits", :force => true do |t|
+    t.integer  "rate"
+    t.integer  "points"
+    t.integer  "worker"
+    t.integer  "buildtime"
+    t.integer  "woodcost"
+    t.integer  "stonecost"
+    t.integer  "ironcost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "slugs", :force => true do |t|
     t.string   "name"
@@ -59,6 +118,18 @@ ActiveRecord::Schema.define(:version => 20110817004535) do
     t.integer  "population"
     t.integer  "x"
     t.integer  "y"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "woodhouses", :force => true do |t|
+    t.integer  "rate"
+    t.integer  "points"
+    t.integer  "worker"
+    t.integer  "buildtime"
+    t.integer  "woodcost"
+    t.integer  "stonecost"
+    t.integer  "ironcost"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

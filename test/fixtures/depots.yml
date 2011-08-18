@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  limit: 1
+  points: 1
+  worker: 1
+  buildtime: 1
+
+two:
+  limit: 1
+  points: 1
+  worker: 1
+  buildtime: 1

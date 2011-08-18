@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  rate: 1
+  points: 1
+  worker: 1
+  buildtime: 1
+
+two:
+  rate: 1
+  points: 1
+  worker: 1
+  buildtime: 1

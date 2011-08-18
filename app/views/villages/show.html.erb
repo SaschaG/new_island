@@ -3,42 +3,43 @@
 <div class = "navigation">
   <table>
     <tr>
-	  <td><b> <%= @village.name %></b> (<%= link_to @user.name , user_path(@user) %>) ||</td><td></td>
+	  <td><%= link_to @user.name , user_path(@user) %> --- Dorf: <b> <%= @village.name %></b> ( <%= @village.x %>/<%= @village.y %> )</td><td></td>
 	  <td>Wood: <%= @village.wood %></td><td>Stone: <%= @village.stone %> </td><td>
-	  Iron: <%= @village.iron %> </td><td>Population: <%= @village.population %></td>
+	  Iron: <%= @village.iron %> </td><td>Population: <%= @village.population %> / <%= Farm.find(@village.farm_id).limit %></td>
 	</tr>
   </table>
 </div>
 
-  <b>Woodhouse:</b>
-  <%= @village.woodhouse_id %><br/>
+<table>
+
+  <tr>
+    <td><b>Gebäude</b></td><td><b>Stufe</b></td><td><b>Kosten(Holz/Stein/Eisen)</b></td>
+  </tr>
   
-  <b>Pit:</b>
-  <%= @village.pit_id %><br/>
+  <tr>
+    <td>Haupthaus:</td><td><%= @village.hq_id %></td><td><%= Hq.find(@village.hq_id).woodcost %> / <%= Hq.find(@village.hq_id).stonecost %> / <%= Hq.find(@village.hq_id).ironcost %></td><td><%= link_to "Bauen",  :controller => 'villages', :action => 'upgrade_hq' %></td>
+  </tr> 
+  
+  <tr>
+    <td>Lager:</td><td><%= @village.depot_id %></td><td><%= Depot.find(@village.depot_id).woodcost %> / <%= Depot.find(@village.depot_id).stonecost %> / <%= Depot.find(@village.depot_id).ironcost %></td><td><%= link_to "Bauen",  :controller => 'villages', :action => 'upgrade_depot' %></td>
+  </tr>
+  
+  <tr>
+    <td>Holzfäller:</td><td><%= @village.woodhouse_id %></td> <td><%= Woodhouse.find(@village.woodhouse_id).woodcost %> / <%= Woodhouse.find(@village.woodhouse_id).stonecost %> / <%= Woodhouse.find(@village.woodhouse_id).ironcost %></td><td><%= link_to "Bauen",  :controller => 'villages', :action => 'upgrade_woodhouse' %></td>
+  </tr>
+  
+  <tr>
+    <td>Steinbruch:</td><td><%= @village.pit_id %></td> <td><%= Woodhouse.find(@village.woodhouse_id).woodcost %> / <%= Woodhouse.find(@village.woodhouse_id).stonecost %> / <%= Woodhouse.find(@village.woodhouse_id).ironcost %></td><td><%= link_to "Bauen",  :controller => 'villages', :action => 'upgrade_pit' %></td>
+  </tr>
 
-  <b>Mine:</b>
-  <%= @village.mine_id %><br/>
+  <tr>
+    <td>Mine:</td><td><%= @village.mine_id %></td> <td><%= Mine.find(@village.mine_id).woodcost %> / <%= Mine.find(@village.mine_id).stonecost %> / <%= Mine.find(@village.mine_id).ironcost %></td><td><%= link_to "Bauen",  :controller => 'villages', :action => 'upgrade_mine' %></td>
+  </tr>  
 
-  <b>Farm:</b>
-  <%= @village.farm_id %><br/>
+  <tr>
+    <td>Farm:</td><td><%= @village.farm_id %></td><td><%= Farm.find(@village.farm_id).woodcost %> / <%= Farm.find(@village.farm_id).stonecost %> / <%= Farm.find(@village.farm_id).ironcost %></td><td><%= link_to "Bauen",  :controller => 'villages', :action => 'upgrade_farm' %></td>
+  </tr> 
+<br/>
+</table>
 
-<p>
-
-</p>
-
-<p>
-
-</p>
-
-<p>
-
-</p>
-
-<p>
-
-</p>
-
-
-
-<%= link_to 'Edit', edit_village_path(@village) %> |
-<%= link_to 'Back', villages_path %>
+<%= link_to 'Namen ändern', edit_village_path(@village) %>
