@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110817125738) do
+ActiveRecord::Schema.define(:version => 20110818140907) do
+
+  create_table "coordinates", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "x"
+    t.integer  "y"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "depots", :force => true do |t|
     t.integer  "limit"

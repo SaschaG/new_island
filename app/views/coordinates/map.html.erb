@@ -1,0 +1,41 @@
+<% x = Coordinates.where(:user_id => current_user.id).first.x - 3 %>
+<% y = Coordinates.where(:user_id => current_user.id).first.y + 3 %>
+
+<center>
+<div class = "map">
+<%= link_to "nach oben",  :controller => 'coordinates', :action => 'up_to_top' %>
+<table>
+<tr>
+<td><%= link_to "nach links",  :controller => 'coordinates', :action => 'up_to_left' %></td>
+<td>
+<table cellspacing="0" cellpadding="0" border = "1" >
+
+  <% while y  > Coordinates.where(:user_id => current_user.id).first.y - 4 %>
+    <tr>
+      <% while x  < Coordinates.where(:user_id => current_user.id).first.x + 4 %> 
+        <% if Village.where(:x => x , :y => y).empty? %>
+          <td> <%= image_tag("wiese.png") %> </td>
+          <% x = x + 1 %>
+        <% else %>
+          <td > <%= image_tag("dorf.png") %> </td>
+          <% x = x + 1 %>
+        <% end %>
+      <% end %>
+    </tr>
+    <% y = y - 1 %>
+    <% x = Coordinates.where(:user_id => current_user.id).first.x - 3 %>
+  <% end %>
+  
+
+</table>
+</td>
+<td><%= link_to "nach rechts",  :controller => 'coordinates', :action => 'up_to_right' %></td>
+</tr>
+</table>
+<%= link_to "nach unten",  :controller => 'coordinates', :action => 'up_to_bottom' %>
+</div>
+</center>
+
+
+
+

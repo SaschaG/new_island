@@ -1,0 +1,26 @@
+<% x = Coordinates.where(:user_id => current_user.id).first.x - 3 %>
+<% y = Coordinates.where(:user_id => current_user.id).first.y + 3 %>
+
+<center
+<div class = "map">
+<table cellspacing="0" cellpadding="0">
+
+  <% while y  > Coordinates.where(:user_id => current_user.id).first.y - 4 %>
+    <tr>
+      <% while x  < Coordinates.where(:user_id => current_user.id).first.x + 5 %> 
+        <% if Village.where(:x => x , :y => y).empty? %>
+          <td> <%= image_tag("wiese.png") %> </td>
+          <% x = x + 1 %>
+        <% else %>
+          <td> 1 </td>
+          <% x = x + 1 %>
+        <% end %>
+      <% end %>
+    </tr>
+    <% y = y - 1 %>
+    <% x = Coordinates.where(:user_id => current_user.id).first.x - 3 %>
+  <% end %>
+
+</table>
+</div>
+</center>

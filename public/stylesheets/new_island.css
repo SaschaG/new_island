@@ -104,3 +104,21 @@ td.sidebar{
 table td{
   padding: 7px;
 }
+
+.map table{
+  padding : 0;
+  cellspacing:0;
+}
+
+.map table td{
+  padding : 0;
+  cellspacing:0;
+  margin: 0;
+}
+
+h6{
+color: #000;
+height: 1px;
+text-align:right ;
+margin:4px;
+}

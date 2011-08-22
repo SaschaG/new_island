@@ -1,0 +1,29 @@
+<script>
+  var h = 0 , m = 0 , s = 0 ;
+  
+  function init(){
+    s = <%= Time.now.sec %> ;
+    m = <%= Time.now.min %> ;
+    h = <%= Time.now.hour %> ;
+    updateTime();
+    
+  }
+  
+  function updateTime(){
+    s++;
+    if (s == 60 ){
+      s = 0;
+      m++;
+    }
+    if (m == 60){
+      m = 0 ;
+      h++;
+    }
+    
+    if ( h == 24){
+      h = 1;
+    }
+    document.getElementById("ur").innerHTML = h + ":" + m + ":" + s;
+    setTimeout("updateTime()" , 1000);
+  }
+</script>
