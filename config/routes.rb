@@ -17,6 +17,6 @@ NewIsland::Application.routes.draw do
   match "coordinates/up_to_right" => 'coordinates#up_to_right', :controller => 'coordinates', :action => 'up_to_right'
   match "coordinates/up_to_left" => 'coordinates#up_to_left', :controller => 'coordinates', :action => 'up_to_left'
   
-  match "/ressources" => 'villages#ressources', :controller => 'villages', :action => 'ressources'
+  match "villages/:id/ressources" => 'villages#ressources', :controller => 'villages', :action => 'ressources'
 root :to => "pages#home"
 end

@@ -235,6 +235,7 @@ class VillagesController < ApplicationController
   end
   
   def ressources
-render :layout => false
+    render :layout => false
+    redirect_to
   end
 end

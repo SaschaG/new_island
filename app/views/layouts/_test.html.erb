@@ -1,12 +1,12 @@
 <script>
-  var h = 0 , m = 0 , s = 0 ;
+  var h = 1 , m = 1 , s = 1 ;
   
   function init(){
     s = <%= Time.now.sec %> ;
     m = <%= Time.now.min %> ;
     h = <%= Time.now.hour %> ;
+    initRessources();
     updateTime();
-    
   }
   
   function updateTime(){
@@ -26,4 +26,6 @@
     document.getElementById("ur").innerHTML = h + ":" + m + ":" + s;
     setTimeout("updateTime()" , 1000);
   }
+  
+  
 </script>

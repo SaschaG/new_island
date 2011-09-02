@@ -1,11 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<div class = "navigation">
+<div class = "navigation" >
   <table>
     <tr>
 	  <td><%= link_to @user.name , user_path(@user) %> --- Dorf: <b> <%= @village.name %></b> ( <%= @village.x %>/<%= @village.y %> )</td><td></td>
-	  <td>Wood: <%= @village.wood %></td><td>Stone: <%= @village.stone %> </td><td>
-	  Iron: <%= @village.iron %> </td><td>Population: <%= @village.population %> / <%= Farm.find(@village.farm_id).limit %></td>
+	  <td>Wood: <font id="wood"><%= @village.wood %></font></td>
+	  <td>Stone: <font id="stone"><%= @village.stone %></font> </td>
+	  <td>Iron: <font id="iron"><%= @village.iron %> </font></td>
+	  <td>Population: <font id="population"><%= @village.population %> </font>/ <font id="farm"><%= Farm.find(@village.farm_id).limit %></form></td>
 	</tr>
   </table>
 </div>

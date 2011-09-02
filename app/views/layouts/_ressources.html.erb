@@ -1,0 +1,56 @@
+<% if user_signed_in? %>
+  <script>
+  	var http = null;
+	if (window.XMLHttpRequest) {
+ 	  http = new XMLHttpRequest();
+	} 
+	else if (window.ActiveXObject) {
+ 	  http = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+
+	function ausgeben() {
+ 	  if (http.readyState == 4) {
+        document.getElementById("Ausgabe").innerHTML =
+        http.responseText;
+ 	  }	
+	}
+
+
+
+
+
+
+  var wood = 0 , stone = 0 , iron = 0 , population = 0, farm = 0;
+  
+  function initRessources(){
+    wood = <%= @village.wood %> ;
+    stone = <%= @village.stone %> ;
+    iron = <%= @village.iron %> ;
+    population = <%= @village.population %> ;
+    farm = <%= Farm.find(@village.farm_id).limit %> ;
+    updateRessources();
+    
+  }
+  
+  function updateRessources(){
+    
+      if (http != null) {
+ 	    http.open("GET", "ressources", true);
+ 	    http.onreadystatechange = ausgeben;
+ 	    http.send(null);
+	  }
+    
+    document.getElementById("wood").innerHTML = wood;
+    document.getElementById("stone").innerHTML = stone;
+    document.getElementById("iron").innerHTML = iron;
+    document.getElementById("population").innerHTML = population;
+    document.getElementById("farm").innerHTML = farm;
+    setTimeout("updateRessources()" , 1000);
+  }
+</script>
+
+<% end %>
+
+
+
